@@ -12,7 +12,7 @@ os.chdir(Folder_Path)
 file_list = os.listdir()
 
 # Read the first CSV file and include the header and add a new column to include the filename
-df = pd.read_csv(Folder_Path + '\\' + file_list[0])  # 编码默认UTF-8，若乱码自行更改
+df = pd.read_csv(Folder_Path + '\\' + file_list[0])
 df["Playlist Name"] = os.path.splitext(file_list[0])[0]
 # Write the first CSV file into the merged file and save
 df.to_csv(SaveFile_Path + '\\' + SaveFile_Name, encoding="utf_8_sig", index=False)
